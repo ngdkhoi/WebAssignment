@@ -1,16 +1,8 @@
+const productModel = require('../models/productModel');
 
-class ProductController{
-
-    //[GET] product
-    index(req, res){
-        res.render('listproduct');
-    }
-
-    //[GET] /product/:slug
-    show(req, res){
-        res.send('DETAIL');
-    }
-
-}
-
-module.exports = new ProductController;
+exports.index = (req, res, next) => {
+    // Get products from model
+    const products = productModel.list();
+    // Pass data to view to display list of products
+    res.render('products', {products});
+};
