@@ -5,9 +5,9 @@ const handlebars = require('express-handlebars');
 const app = express();
 const port=3000;
 
-const route =require('./routes')
+const route =require('./src/routes')
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'src/public')))
 
 
 //HTTP logger
@@ -18,7 +18,7 @@ app.engine('hbs', handlebars({
     extname: '.hbs'
 }));
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'resourses/views'));
+app.set('views', path.join(__dirname, 'src\\resourses\\views'));
 
 //Route init
 route(app);
