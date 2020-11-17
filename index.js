@@ -18,10 +18,11 @@ app.engine('hbs', handlebars({
     extname: '.hbs'
 }));
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'src\\resourses\\views'));
+app.set('views', path.join(__dirname, 'src/resourses/views'));
 
 //Route init
 route(app);
+
 
 
 app.listen(port, ()=>console.log(`Example app listen at http://localhost:${port}`));

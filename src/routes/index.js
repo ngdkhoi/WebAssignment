@@ -1,6 +1,7 @@
 const loginRouter=require('./login');
 const indexRouter=require('./main')
 const productsRouter = require('./listproduct');
+const detailRouter = require('./detail');
 
 function route(app){
 
@@ -13,6 +14,8 @@ function route(app){
     app.get('/', indexRouter);
 
     app.use('/products', productsRouter);
+
+    app.use('/detail', detailRouter);
 }
 
 module.exports = route;
